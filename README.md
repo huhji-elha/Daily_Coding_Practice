@@ -1,2 +1,5 @@
-# Daily_Coding_Test
-👨‍💻 항상 더 나은 방법을 찾기. 
+# Daily Coding Practice
+
+* 1일 1커밋 목표
+* 문제 풀이 100 달성
+  
