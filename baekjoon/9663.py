@@ -2,12 +2,15 @@
 import sys 
 n = int(sys.stdin.readline())
 
-board = [0 for _ in range(n)]
+board = []
 
 # 배열 두 개로 풀면 X
 # 1차원 배열에서 x,y 좌표를 index, board[index]로 풀어야한다.
 # 0,0을 표현하면 board[0] = 0
 
+cnt = 0
+for i in range(n):
+    if board[i] 
 
 
 
