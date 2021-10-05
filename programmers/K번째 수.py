@@ -13,6 +13,7 @@ array	commands	return
 [1, 5, 2, 6, 3, 7, 4]	[[2, 5, 3], [4, 4, 1], [1, 7, 3]]	[5, 6, 3]
 
 """
+
 # 첫번째 풀이 : list comprehension으로 풀기 
 def solution(array, commands):
     return [sorted(array[c[0]-1:c[1]])[c[2]-1] for c in commands]
