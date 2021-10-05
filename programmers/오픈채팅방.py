@@ -10,19 +10,17 @@ result
 
 def solution(record):
     name_dict = {}
-    enter_list = []
     answer = []
+    answer_print = {"Enter":"님이 들어왔습니다.", "Leave":"님이 나갔습니다."}
+    
     for rec in record:
         rec_list = rec.split()
         if rec_list[0] != "Leave":
             name_dict[rec_list[1]] = rec_list[2]
-        if rec_list[0] != "Change":
-            enter_list.append([rec_list[0], rec_list[1]])
 
-    for ent in enter_list:
-        if ent[0] == "Enter":
-            answer.append(f"{name_dict[ent[1]]}님이 들어왔습니다.")
-        else:
-            answer.append(f"{name_dict[ent[1]]}님이 나갔습니다.")
+    for rec in record:
+        r = rec.split()
+        if r[0] != "Change":
+            answer.append(f"{name_dict[r[1]]}{answer_print[r[0]]}")
         
     return answer

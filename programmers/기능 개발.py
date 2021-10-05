@@ -6,7 +6,7 @@ progresses	speeds	return
 [95, 90, 99, 99, 80, 99]	[1, 1, 1, 1, 1, 1]	[1, 3, 2]
 """
 
-# 나의 풀이 01
+# 나의 풀이 
 def get_progress(progresses, speeds):
     _progress = []
     for p, s in zip(progresses, speeds):
@@ -14,7 +14,6 @@ def get_progress(progresses, speeds):
     return _progress
 
 def get_finish(progress):
-    _idx = 0
     for i in range(len(progress)):
         if progress[i] < 100:
             return i
