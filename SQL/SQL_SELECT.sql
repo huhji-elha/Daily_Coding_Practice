@@ -1,27 +1,27 @@
-# 전체 데이터를 ANIMAL_ID 오름차순으로 출력하기
+-- 전체 데이터를 ANIMAL_ID 오름차순으로 출력하기
 SELECT * FROM ANIMAL_INS ORDER BY ANIMAL_ID ASC
 
-# 특정 컬럼을 ANIMAL_ID 역순으로 출력하기
+-- 특정 컬럼을 ANIMAL_ID 역순으로 출력하기
 SELECT NAME, DATETIME FROM ANIMAL_INS ORDER BY ANIMAL_ID DESC
 
-# 어떤 조건을 만족할 때 특정 컬럼 출력하기
+-- 어떤 조건을 만족할 때 특정 컬럼 출력하기
 SELECT ANIMAL_ID, NAME FROM ANIMAL_INS WHERE INTAKE_CONDITION='Sick' ORDER BY ANIMAL_ID ASC
 
-# INTAKE_CONDITION!='Sick' 일 때 특정 컬럼 출력하기
+-- INTAKE_CONDITION!='Sick' 일 때 특정 컬럼 출력하기
 SELECT ANIMAL_ID, NAME FROM ANIMAL_INS WHERE INTAKE_CONDITION NOT IN ('Aged') ORDER BY ANIMAL_ID ASC
 SELECT ANIMAL_ID, NAME FROM ANIMAL_INS WHERE INTAKE_CONDITION!='Aged' ORDER BY ANIMAL_ID ASC
 
-# 두 가지 기준으로 정렬하기
+-- 두 가지 기준으로 정렬하기
 SELECT ANIMAL_ID, NAME, DATETIME FROM ANIMAL_INS ORDER BY NAME ASC, DATETIME DESC
 
-# 가장 오래된 날짜의 값 가져오기
+-- 가장 오래된 날짜의 값 가져오기
 SELECT NAME FROM ANIMAL_INS WHERE DATETIME=(SELECT MIN(DATETIME) FROM ANIMAL_INS)
 
-# 가장 최근 날짜 상위 10개 값 가져오기
+-- 가장 최근 날짜 상위 10개 값 가져오기
 SELECT NAME FROM ANIMAL_INS ORDER BY DATETIME DESC LIMIT 10
 
-# ID의 값이 짝수인 도시 이름 추출, 대신 이름이 중복되면 안됨.
+-- ID의 값이 짝수인 도시 이름 추출, 대신 이름이 중복되면 안됨.
 SELECT DISTINCT CITY FROM STATION WHERE MOD(ID,2) = 0
 
-# langtitude의 중앙값 구하기
+-- langtitude의 중앙값 구하기
 SELECT ROUND(LAT_N,4) FROM (SELECT LAT_N, PERCENT_RANK() OVER (ORDER BY LAT_N) percent FROM STATION) a WHERE percent = 0.5;

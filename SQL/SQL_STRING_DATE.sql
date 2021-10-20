@@ -1,30 +1,30 @@
 
-# STRING, DATE 다루기 
+-- STRING, DATE 다루기 
 SELECT ANIMAL_ID, NAME, SEX_UPON_INTAKE
 FROM ANIMAL_INS 
 WHERE NAME IN ("Lucy", "Ella", "Pickle", "Rogan", "Sabrina", "Mitty")
 ORDER BY ANIMAL_ID
 
-# 대소문자 구분 없이 이름이 'EL'이 들어가는 강아지 찾기
+-- 대소문자 구분 없이 이름이 'EL'이 들어가는 강아지 찾기
 SELECT ANIMAL_ID, NAME FROM ANIMAL_INS
 WHERE lower(NAME) LIKE "%el%" AND ANIMAL_TYPE = "Dog"
 ORDER BY NAME
 
-# 중성화 되었으면 'O', 안되었으면 'X'를 컬럼에 같이 출력하기
+-- 중성화 되었으면 'O', 안되었으면 'X'를 컬럼에 같이 출력하기
 SELECT ANIMAL_ID, NAME, IF(
     SEX_UPON_INTAKE LIKE '%Neutered%' OR SEX_UPON_INTAKE LIKE '%Spayed%', 'O','X'
 ) AS 중성화
 FROM ANIMAL_INS
 ORDER BY ANIMAL_ID
 
-# 두 테이블의 차이가 가장 큰 데이터만 출력하기 
+-- 두 테이블의 차이가 가장 큰 데이터만 출력하기 
 SELECT I.ANIMAL_ID, I.NAME
 FROM ANIMAL_INS AS I 
 INNER JOIN ANIMAL_OUTS AS O
 ON I.ANIMAL_ID = O.ANIMAL_ID
 ORDER BY DATEDIFF(O.DATETIME, I.DATETIME) DESC LIMIT 2
 
-# 날짜 형식 바꾸기
+-- 날짜 형식 바꾸기
 SELECT ANIMAL_ID, NAME, DATE_FORMAT(DATETIME, '%Y-%m-%d') 
 FROM ANIMAL_INS
 ORDER BY ANIMAL_ID
