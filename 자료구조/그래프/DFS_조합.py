@@ -30,7 +30,7 @@ class Solution:
                 return
             for i, n in enumerate(nums):
                 next_comb.append(n)
-                comb(nums[i+1:], next_comb)
+                comb(nums[i+1:], next_comb) # 중복을 허용하지 않으므로 추가한 값을 제외한 다음 리스트를 넘긴다.
                 next_comb.pop()
         comb(nums,[])
         return answer
