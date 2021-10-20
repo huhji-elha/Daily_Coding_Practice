@@ -1,4 +1,6 @@
 """
+https://leetcode.com/problems/permutations/
+
 서로 다른 정수를 입력받아 가능한 모든 순열 리턴
 
 Input: nums = [1,2,3]
@@ -12,7 +14,7 @@ Output: [[1]]
 """
 
 # 아이디어01 : dfs 재귀함수로 순열 풀기
-# 아이디어02 : 한 번 사용한 숫자는 리스트에서 제거 --> 다음 재귀 함수로 넘긴다(next) --> 제거한 숫자는 순열에 추가한다.
+# 한 번 사용한 숫자는 리스트에서 제거 --> 다음 재귀 함수로 넘긴다(next) --> 제거한 숫자는 순열에 추가한다.
 # Runtime : 52 ms
 # Memory : 14.5 MB
 class Solution:
@@ -37,7 +39,7 @@ class Solution:
         dfs(nums)
         return answer
     
-# 아이디어03 : python의 itertools.permutation으로 풀이하기
+# 아이디어02 : python의 itertools.permutation으로 풀이하기
 # Runtime : 58 ms
 # Memory : 14.5 MB
 from itertools import permutations
