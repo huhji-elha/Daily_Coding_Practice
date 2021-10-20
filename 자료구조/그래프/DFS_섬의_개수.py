@@ -25,6 +25,8 @@ Output: 3
 # 아이디어 02 : 이미 탐색한 곳은 0으로 바꾼다.
 
 # 첫번째 풀이
+# Runtime: 665 ms
+# Memory : 16.8 MB
 class Solution:
     def numIslands(self, grid: List[List[str]]) -> int:
         self.grid = grid
@@ -47,6 +49,8 @@ class Solution:
         self.dfs(i-1, j) # 북
         
 # 두 번째 풀이: 함수를 좀 더 깔끔하게 바꾸기 (중첩 함수 이용)
+# Runtime: 695 ms
+# Memory : 17 MB
 class Solution:
     def numIslands(self, grid: List[List[str]]) -> int:
         
