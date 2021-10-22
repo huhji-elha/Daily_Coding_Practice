@@ -22,6 +22,8 @@ k = 1
 # 아이디어01 : 네트워크 딜레이 타임에서 사용한 다익스트라 알고리즘을 변형해서 사용한다.
 # k 이내에 도착하는 가장 작은 cost를 구하는 것이므로 우선순위 큐에 K 값도 반영한다.
 # 도착 노드에 도착한 즉시 cost를 반환하면 되므로 모든 경로를 기록하는 dist dict는 사용하지 않아도 된다.
+# Runtime : 210 ms
+# Memory : 19.8MB
 from collections import defaultdict
 import heapq
 

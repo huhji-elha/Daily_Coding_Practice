@@ -11,7 +11,11 @@ Output: ["JFK","MUC","LHR","SFO","SJC"]
 # 아이디어01 : while문과 재귀 함수를 사용해서 트리의 끝까지 도달한 다음 리스트에 담기
 # while문을 빠져나온 순서대로(더 이상 여행할 곳이 없는 마지막 여행지 순서대로) 리스트에 담겼으므로
 # return할 때 리스트를 뒤집어주어야한다.
+# Runtime : 144 ms
+# Memory : 14.7 MB
 from collections import defaultdict
+
+
 class Solution:
     def findItinerary(self, tickets: List[List[str]]) -> List[str]:
         ticket_dict = defaultdict(list)
@@ -23,9 +27,11 @@ class Solution:
                 next_t = ticket_dict[start_t].pop()
                 reconstruct(next_t)
             answer.append(start_t)
+
         answer = []
         reconstruct("JFK")
         return answer[::-1]
+
 
 """
 reconstruct의 start_t와 next_t의 출력 순서를 확인해보면 다음과 같다.

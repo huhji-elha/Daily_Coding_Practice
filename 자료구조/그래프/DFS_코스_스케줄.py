@@ -8,7 +8,8 @@ https://leetcode.com/problems/course-schedule/
 # 재귀 함수와 DFS로 순환 그래프 판별 알고리즘 구현.
 # 재귀 함수에서 False를 리턴하기 위해서는 상위 함수로 False를 전달해주어야한다.
 # [[0, 1], [0, 2], [1, 2]]은 순환구조가 아니라는 것을 주의하자.
-
+# Runtime : 88 ms
+# Memory : 17.8 MB
 from collections import defaultdict
 
 
@@ -35,6 +36,7 @@ class Solution:
                 return False
 
         return True
+
 
 # 아이디어02 : 위의 방법대로 하면 이미 탐색한 노드를 여러번 반복해서 탐색하게된다.
 # 가령, [[0,2],[1,2],[2,3],[3,4]] 의 트리를 탐색한다고 했을때 0에서 시작하는 루트와 1에서 시작하는 루트가 같음에도 두 번 탐색하게 되는 것.

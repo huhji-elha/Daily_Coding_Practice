@@ -33,6 +33,8 @@ k = 2
 """
 # 아이디어01 : 모든 노드가 신호를 받는데 걸리는 시간을 계산한다.
 # 아이디어02 : 시작 노드에서 모든 노드에 도달할 수 있는지 계산한다.
+# Runtime : 798 ms
+# Memory : 16.3 MB
 import heapq
 from collections import defaultdict
 
