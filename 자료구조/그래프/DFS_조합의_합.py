@@ -11,9 +11,12 @@ Output: [[2,2,3],[7]]
 # 아이디어01 : 재귀 DFS로 조합 풀기 / 단, idx를 사용해서 중복이 안되게 하기.
 # Runtime : 137 ms
 # memory : 14.5 MB
+
+
 class Solution:
-    def combinationSum(self, candidates: List[int], target: int) -> List[List[int]]:
+    def combinationSum(self, candidates: List[int], target: int):
         answer = []
+
         def comb_sum(idx, next_comb):
             if sum(next_comb) == target:
                 answer.append(next_comb[:])
@@ -21,11 +24,13 @@ class Solution:
             if sum(next_comb) > target:
                 return
             for i in range(idx, len(candidates)):
-                next_comb.append(candidates[i]) 
+                next_comb.append(candidates[i])
                 comb_sum(i, next_comb)
                 next_comb.pop()
+
         comb_sum(0, [])
         return answer
+
 
 # 재귀함수의 특징을 더 살려서 코드 정리하기 + sum은 O(N)을 가지므로 더 효율적인 방법 찾아보기
 # Runtime : 73 ms
@@ -33,6 +38,7 @@ class Solution:
 class Solution:
     def combinationSum(self, candidates: List[int], target: int) -> List[List[int]]:
         answer = []
+
         def comb_sum(csum, idx, path):
             if csum < 0:
                 return
@@ -41,5 +47,6 @@ class Solution:
                 return
             for i in range(idx, len(candidates)):
                 comb_sum(csum - candidates[i], i, path + [candidates[i]])
+
         comb_sum(target, 0, [])
         return answer
