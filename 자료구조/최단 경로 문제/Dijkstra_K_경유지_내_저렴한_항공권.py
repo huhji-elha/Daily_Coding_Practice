@@ -46,5 +46,5 @@ class Solution:
             if K >= 0:
                 for v, w in edges[node]:
                     flight_cost = price + w
-                    heapq.heappush(Q, (flight_cost, v, K-1))
+                    heapq.heappush(Q, (flight_cost, v, K - 1))
         return -1
