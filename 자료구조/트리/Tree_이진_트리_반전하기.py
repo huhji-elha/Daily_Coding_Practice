@@ -6,16 +6,19 @@ https://leetcode.com/problems/invert-binary-tree/
 Input: root = [4,2,7,1,3,6,9]
 Output: [4,7,2,9,6,3,1]
 
-class TreeNode:
-    def __init__(self, val=0, left=None, right=None):
-        self.val = val
-        self.left = left
-        self.right = right
         
 """
 # 아이디어 01 : bfs를 데크로 구현한 알고리즘 응용하기
 # 주의사항 : 노드 값을 뒤집는 것이 아니라 트리 구조 자체를 뒤집는 것이다. -> root를 리턴해야한다.
 import collections
+
+
+class TreeNode:
+    def __init__(self, val=0, left=None, right=None):
+        self.val = val
+        self.left = left
+        self.right = right
+
 
 # Runtime : 36 ms
 # Memory : 14 MB
