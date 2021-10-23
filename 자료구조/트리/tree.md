@@ -63,7 +63,7 @@
 
 파이썬에는 pickle이라는 직렬화 모듈을 기본으로 제공한다. 이 모듈의 이름이로 인해 파이썬 객체의 계층 구조를 Byte Stream으로 변경하는 작업을 Pickling이라고도 한다.
 
-![](https://lh3.googleusercontent.com/proxy/9tScM2YPL8NqFlRLu7A8wt2rYvOSAbYzWq6T7-pPCLanK2YQGq2DZ7yjSMeG3sZnWbJI2Rr5zOtKTyROzrYlk6BBzBmxEkwDrL2LvoqfD_pv4w)
+<p aline="center"><img src="https://lh3.googleusercontent.com/proxy/9tScM2YPL8NqFlRLu7A8wt2rYvOSAbYzWq6T7-pPCLanK2YQGq2DZ7yjSMeG3sZnWbJI2Rr5zOtKTyROzrYlk6BBzBmxEkwDrL2LvoqfD_pv4w"/></p>
 
 
 
@@ -71,7 +71,7 @@
 
 Complete Binary Tree는 트리의 특성상 배열에 빈틈없이 배치가 가능하다. 위 그림에서는 index를 0부터 사용했지만 대개 트리의 경우 계산을 편하기 위해 index를 1부터 시작한다.
 
-<center><img src="https://lh3.googleusercontent.com/proxy/Mt2ogdQn-7sn3ziKZGsNZeNCoR6W67h9nun4F0JliGjhQw0pKunK7uc0vmHMLVjPgcxLdNhxMQHWQCAF5yoN1LAfZs2YR2AnLMpH-1cclrA"></center>
+<p aline="center"><img src="https://lh3.googleusercontent.com/proxy/Mt2ogdQn-7sn3ziKZGsNZeNCoR6W67h9nun4F0JliGjhQw0pKunK7uc0vmHMLVjPgcxLdNhxMQHWQCAF5yoN1LAfZs2YR2AnLMpH-1cclrA"/></p>
 
 [*_reference_link*](http://mishadoff.com/blog/dfs-on-binary-tree-array/)
 
@@ -79,7 +79,7 @@ Complete Binary Tree는 트리의 특성상 배열에 빈틈없이 배치가 가
 
 또한 index를 1부터 시작했을 때 트리의 깊이는 아래의 그림처럼 1, 2, 4, 8, ... 순으로 2배씩 증가하며, 현재 노드(i) 위치에서 부모의 위치는 i/2, 왼쪽 자식은 2i, 오른쪽 자식은 2i+1이 된다.
 
-<center><img src="https://lh4.ggpht.com/-u2Lb-zvWCFE/ULBxmsa1mbI/AAAAAAAACFk/ZOAvwzAsJaU/clip_image001%25255B4%25255D_thumb%25255B1%25255D.gif?imgmax=800"></center>
+<p aline="center"><img src="https://lh4.ggpht.com/-u2Lb-zvWCFE/ULBxmsa1mbI/AAAAAAAACFk/ZOAvwzAsJaU/clip_image001%25255B4%25255D_thumb%25255B1%25255D.gif?imgmax=800"/></p>
 
 [*_reference_link*](https://www.google.com/url?sa=i&url=http%3A%2F%2Fagikarasugi2021ds.blogspot.com%2F2018%2F03%2Fpertemuan-5-tree-and-binary-tree-binary.html&psig=AOvVaw19Dt2bSsJpbT0JVo8OrliD&ust=1635078843741000&source=images&cd=vfe&ved=0CAsQjRxqFwoTCKibqNTF4PMCFQAAAAAdAAAAABAf)
 
