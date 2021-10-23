@@ -30,3 +30,31 @@ class Solution:
                 queue.append(node.right)
         return root
 
+
+# 아이디어 02 : 재귀함수로 트리 뒤집기
+# 트리는 서브트리의 집합이기 때문에 이러한 방식이 가능하다.
+
+
+class Solution2:
+    def invertTree(self, root: TreeNode):
+        root.left, root.right = (
+            self.invertTree(root.right),
+            self.invertTree(root.left),
+        )
+        return root
+
+
+# 아이디어 03 : DFS로 풀기
+# 위의 BFS는 popleft를 써서 가장 먼저 들어온 값을 먼저 빼내면서 큐로 풀이했다.
+# DFS로 풀면 stack 구조로 가장 나중에 들어온 값을 먼저 빼내면 된다.
+class Solution3:
+    def invertTree(self, root: TreeNode):
+        stack = collections.deque([root])
+        while stack:
+            node = stack.pop()
+            if node:
+                node.left, node.right = node.left, node.right
+                stack.append(node.left)
+                stack.append(node.right)
+        return root
+
