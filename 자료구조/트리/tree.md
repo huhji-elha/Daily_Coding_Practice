@@ -11,7 +11,7 @@
   - [트리의 특징](#트리의-특징)
   - [그래프 vs 트리](#그래프-vs-트리)
   - [이진 트리 (Binary Tree)](#이진-트리-binary-tree)
-    - [이진 트리의 직렬화(Serialize)와 역직렬화(Deserialize)](#이진-트리의-직렬화serialize와-역직렬화deserialize)
+    - [이진 트리의 직렬화와 역직렬화(Serialize vs Deserialize)](#이진-트리의-직렬화와-역직렬화serialize-vs-deserialize)
   - [이진 탐색 트리(Binary Search Tree)](#이진-탐색-트리binary-search-tree)
     - [자가 균형 이진 탐색 트리](#자가-균형-이진-탐색-트리)
 
@@ -54,32 +54,29 @@
 * Complete Binary Tree(완전 이진 트리) : 마지막 레벨을 제외하고 모든 레벨이 완전히 채워져 있다. 마지막 레벨의 노드는 왼쪽부터 채워져있다.
 * Perfect Binary Tree(포화 이진 트리) : 모든 노드가 2개의 자식 노드를 갖고 있으며 모든 leaf node가 동일한 깊이를 갖는다. 가장 완벽한 모양의 트리.
 
-### 이진 트리의 직렬화(Serialize)와 역직렬화(Deserialize)
+### 이진 트리의 직렬화와 역직렬화(Serialize vs Deserialize)
 
 이진 트리의 데이터 구조는 논리적인 구조이다. 실제 디스크 상에서 이러한 계층 구조로 저장되지 않는다. 
 파일이나 디스크에 트리를 저장할 때는 물리적인 형태로 바꾸어주어야 하는데 이를 직렬화(Serialize)라고 한다.
 
 반대로 물리적인 형태를 트리의 논리적인 구조로 바꾸는 작업을 역직렬화(Deserialize)라고 한다.
 
-파이썬에는 pickle이라는 직렬화 모듈을 기본으로 제공한다. 이 모듈의 이름이로 인해 파이썬 객체의 계층 구조를 Byte Stream으로 변경하는 작업을 Pickling이라고도 한다.
+파이썬에는 `pickle`이라는 직렬화 모듈을 기본으로 제공한다. 이 모듈의 이름이로 인해 파이썬 객체의 계층 구조를 Byte Stream으로 변경하는 작업을 Pickling이라고도 한다.
 
-<p align="center"><img src="https://lh3.googleusercontent.com/proxy/9tScM2YPL8NqFlRLu7A8wt2rYvOSAbYzWq6T7-pPCLanK2YQGq2DZ7yjSMeG3sZnWbJI2Rr5zOtKTyROzrYlk6BBzBmxEkwDrL2LvoqfD_pv4w"/></p>
-
-
-
-위 그림의 첫번째 트리는 Complete Binary Tree이나 Perfect Binary Tree로서 배열로 표현했을 때 모든 노드를 Null 값 없이 배치할 수 있다. 
-
-Complete Binary Tree는 트리의 특성상 배열에 빈틈없이 배치가 가능하다. 위 그림에서는 index를 0부터 사용했지만 대개 트리의 경우 계산을 편하기 위해 index를 1부터 시작한다.
-
-<center><img src="https://lh3.googleusercontent.com/proxy/Mt2ogdQn-7sn3ziKZGsNZeNCoR6W67h9nun4F0JliGjhQw0pKunK7uc0vmHMLVjPgcxLdNhxMQHWQCAF5yoN1LAfZs2YR2AnLMpH-1cclrA"/></center>
+<center><img src="https://lh3.googleusercontent.com/proxy/9tScM2YPL8NqFlRLu7A8wt2rYvOSAbYzWq6T7-pPCLanK2YQGq2DZ7yjSMeG3sZnWbJI2Rr5zOtKTyROzrYlk6BBzBmxEkwDrL2LvoqfD_pv4w"/></center>
 
 [*_reference_link*](http://mishadoff.com/blog/dfs-on-binary-tree-array/)
 
+위 그림의 첫번째 트리는 Complete Binary Tree이나 Perfect Binary Tree로서 배열로 표현했을 때 모든 노드를 Null 값 없이 배치할 수 있다. 
+
+**Complete Binary Tree는 트리의 특성상 배열에 빈틈없이 배치가 가능하다.** 위 그림에서는 index를 0부터 사용했지만 대개 트리의 경우 계산을 편하기 위해 index를 1부터 시작한다.
+
+
 노드의 index를 알면 깊이가 얼마인지, 부모와 자식 노드가 배열의 어디에 위치하는지 바로 알아낼 수 있다. 
 
-또한 index를 1부터 시작했을 때 트리의 깊이는 아래의 그림처럼 1, 2, 4, 8, ... 순으로 2배씩 증가하며, 현재 노드(i) 위치에서 부모의 위치는 i/2, 왼쪽 자식은 2i, 오른쪽 자식은 2i+1이 된다.
+또한 index를 1부터 시작했을 때 트리의 깊이는 아래의 그림처럼 1, 2, 4, 8, ... 순으로 2배씩 증가하며, 현재 노드 `i`의 위치에서 부모의 위치는 `i/2`, 왼쪽 자식은 `2i`, 오른쪽 자식은 `2i+1`이 된다.
 
-<p align="center"><img src="https://lh4.ggpht.com/-u2Lb-zvWCFE/ULBxmsa1mbI/AAAAAAAACFk/ZOAvwzAsJaU/clip_image001%25255B4%25255D_thumb%25255B1%25255D.gif?imgmax=800"/></p>
+<center><img src="https://lh4.ggpht.com/-u2Lb-zvWCFE/ULBxmsa1mbI/AAAAAAAACFk/ZOAvwzAsJaU/clip_image001%25255B4%25255D_thumb%25255B1%25255D.gif?imgmax=800"/></center>
 
 [*_reference_link*](https://www.google.com/url?sa=i&url=http%3A%2F%2Fagikarasugi2021ds.blogspot.com%2F2018%2F03%2Fpertemuan-5-tree-and-binary-tree-binary.html&psig=AOvVaw19Dt2bSsJpbT0JVo8OrliD&ust=1635078843741000&source=images&cd=vfe&ved=0CAsQjRxqFwoTCKibqNTF4PMCFQAAAAAdAAAAABAf)
 
