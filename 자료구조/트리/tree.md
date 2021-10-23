@@ -14,6 +14,7 @@
     - [이진 트리의 직렬화와 역직렬화(Serialize vs Deserialize)](#이진-트리의-직렬화와-역직렬화serialize-vs-deserialize)
   - [이진 탐색 트리(Binary Search Tree)](#이진-탐색-트리binary-search-tree)
     - [자가 균형 이진 탐색 트리](#자가-균형-이진-탐색-트리)
+    - [Tree 기본 알고리즘 풀이](#tree-기본-알고리즘-풀이)
 
 ---
 
@@ -61,13 +62,13 @@
 
 반대로 물리적인 형태를 트리의 논리적인 구조로 바꾸는 작업을 역직렬화(Deserialize)라고 한다.
 
-파이썬에는 `pickle`이라는 직렬화 모듈을 기본으로 제공한다. 이 모듈의 이름이로 인해 파이썬 객체의 계층 구조를 Byte Stream으로 변경하는 작업을 Pickling이라고도 한다.
+파이썬에는 `pickle`이라는 직렬화 모듈을 기본으로 제공한다. 이 모듈의 이름으로 인해 파이썬 객체의 계층 구조를 Byte Stream으로 변경하는 작업을 Pickling이라고도 한다.
 
 <center><img src="https://lh3.googleusercontent.com/proxy/9tScM2YPL8NqFlRLu7A8wt2rYvOSAbYzWq6T7-pPCLanK2YQGq2DZ7yjSMeG3sZnWbJI2Rr5zOtKTyROzrYlk6BBzBmxEkwDrL2LvoqfD_pv4w"/></center>
 
 [*_reference_link*](http://mishadoff.com/blog/dfs-on-binary-tree-array/)
 
-위 그림의 첫번째 트리는 Complete Binary Tree이나 Perfect Binary Tree로서 배열로 표현했을 때 모든 노드를 Null 값 없이 배치할 수 있다. 
+아래 그림의 트리는 Complete Binary Tree로서 배열로 표현했을 때 모든 노드를 Null 값 없이 배치할 수 있다. 
 
 **Complete Binary Tree는 트리의 특성상 배열에 빈틈없이 배치가 가능하다.** 위 그림에서는 index를 0부터 사용했지만 대개 트리의 경우 계산을 편하기 위해 index를 1부터 시작한다.
 
@@ -86,7 +87,7 @@
 
 이진 탐색 트리는 탐색의 효율을 높이기 위해 정렬한 트리를 말한다.
 
-정렬한 규칙은 다음과 같다.
+이진 트리를 정렬하는 규칙은 다음과 같다.
 
 ```
 항상 노드의 왼쪽 서브트리에는 해당 노드의 값보다 같거나 작은 값들의 노드로 채워져있어야하고, 
@@ -116,3 +117,12 @@ BST는 랜덤하게 생성해도 대부분의 경우 균형이 잘 맞는 왼쪽
 
 이러한 자가 균형 이진 탐색 트리에는 **AVL 트리**와 **Red-Black 트리**가 있다.
 특히 Red-Black 트리는 효율성이 높아 실무에서도 자주 사용되며 JAVA의 해시맵 또한 효율적인 저장 구조를 위해 해시 테이블의 개별 체이닝시 연결 리스트와 함께 Red-Black 트리를 사용한다.
+
+---
+
+### Tree 기본 알고리즘 풀이
+* [BFS로 Binary Tree 구현하기](./Tree_이진_트리의_최대_깊이.py)
+* [상태 값을 계산하는 DFS 트리 구현](./Tree_이진_트리의_직경.py)
+* [상태 값을 계산하는 DFS 트리 응용](./Tree_가장_긴_동일값_경로.py)
+* [Binary Tree 반전하기](./Tree_이진_트리_반전하기.py)
+* [두 Binary Tree 합치기](./Tree_두_이진_트리_병합.py)
