@@ -9,6 +9,8 @@ Output: 2
 """
 # 아이디어 01 : 앞서 풀었던 이진 트리의 직경 알고리즘을 응용한다.
 # 아이디어 02 : 현재 노드와 자식 노드의 값을 비교해서 거리 값을 업데이트하거나 초기화한다.
+# Runtime : 388 ms
+# Memory : 18.1 MB
 class TreeNode:
     def __init__(self, val=0, left=None, right=None):
         self.val = val
