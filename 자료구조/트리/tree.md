@@ -126,3 +126,4 @@ BST는 랜덤하게 생성해도 대부분의 경우 균형이 잘 맞는 왼쪽
 * [상태 값을 계산하는 DFS 트리 응용](./Tree_가장_긴_동일값_경로.py)
 * [Binary Tree 반전하기](./Tree_이진_트리_반전하기.py)
 * [두 Binary Tree 합치기](./Tree_두_이진_트리_병합.py)
+* [Binary Tree Serialize & Deserialize](./Tree_이진_트리_직렬화_역직렬화.py)
