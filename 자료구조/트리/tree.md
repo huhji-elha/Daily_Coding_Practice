@@ -64,10 +64,6 @@
 
 파이썬에는 `pickle`이라는 직렬화 모듈을 기본으로 제공한다. 이 모듈의 이름으로 인해 파이썬 객체의 계층 구조를 Byte Stream으로 변경하는 작업을 Pickling이라고도 한다.
 
-<center><img src="https://lh3.googleusercontent.com/proxy/9tScM2YPL8NqFlRLu7A8wt2rYvOSAbYzWq6T7-pPCLanK2YQGq2DZ7yjSMeG3sZnWbJI2Rr5zOtKTyROzrYlk6BBzBmxEkwDrL2LvoqfD_pv4w"/></center>
-
-[*_reference_link*](http://mishadoff.com/blog/dfs-on-binary-tree-array/)
-
 아래 그림의 트리는 Complete Binary Tree로서 배열로 표현했을 때 모든 노드를 Null 값 없이 배치할 수 있다. 
 
 **Complete Binary Tree는 트리의 특성상 배열에 빈틈없이 배치가 가능하다.** 위 그림에서는 index를 0부터 사용했지만 대개 트리의 경우 계산을 편하기 위해 index를 1부터 시작한다.
