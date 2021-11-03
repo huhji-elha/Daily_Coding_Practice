@@ -22,8 +22,6 @@ import sys
 from collections import deque
 
 # Test Case는 맞으나 Time Exceeded인 상태
-
-
 def morganAndString(a, b):
     def check_priority(a_deque, b_deque):
         i = 0
