@@ -27,48 +27,52 @@ Output: 3
 # 첫번째 풀이
 # Runtime: 665 ms
 # Memory : 16.8 MB
+
+
 class Solution:
-    def numIslands(self, grid: List[List[str]]) -> int:
+    def numIslands(self, grid: list):
         self.grid = grid
         answer = 0
         for i in range(len(self.grid)):
             for j in range(len(self.grid[0])):
                 if self.grid[i][j] == "1":
                     answer += 1
-                    self.dfs(i,j)
+                    self.dfs(i, j)
         return answer
-    
-    def dfs(self, i:int, j:int):
-        if i<0 or j<0 or i>=len(self.grid) or j>=len(self.grid[0]) or self.grid[i][j] == "0":
+
+    def dfs(self, i: int, j: int):
+        if i < 0 or j < 0 or i >= len(self.grid) or j >= len(self.grid[0]) or self.grid[i][j] == "0":
             return
         self.grid[i][j] = "0"
-        
-        self.dfs(i, j+1) # 동
-        self.dfs(i, j-1) # 서
-        self.dfs(i+1, j) # 남
-        self.dfs(i-1, j) # 북
-        
+
+        self.dfs(i, j+1)  # 동
+        self.dfs(i, j-1)  # 서
+        self.dfs(i+1, j)  # 남
+        self.dfs(i-1, j)  # 북
+
 # 두 번째 풀이: 함수를 좀 더 깔끔하게 바꾸기 (중첩 함수 이용)
 # Runtime: 695 ms
 # Memory : 17 MB
+
+
 class Solution:
-    def numIslands(self, grid: List[List[str]]) -> int:
-        
-        def dfs(i:int, j:int):
-            if i<0 or j<0 or i>=len(grid) or \
-            j>=len(grid[0]) or grid[i][j] == "0":
+    def numIslands(self, grid: list):
+
+        def dfs(i: int, j: int):
+            if i < 0 or j < 0 or i >= len(grid) or \
+                    j >= len(grid[0]) or grid[i][j] == "0":
                 return
             grid[i][j] = "0"
-        
-            dfs(i, j+1) # 동
-            dfs(i, j-1) # 서
-            dfs(i+1, j) # 남
-            dfs(i-1, j) # 북
-        
+
+            dfs(i, j+1)  # 동
+            dfs(i, j-1)  # 서
+            dfs(i+1, j)  # 남
+            dfs(i-1, j)  # 북
+
         answer = 0
         for i in range(len(grid)):
             for j in range(len(grid[0])):
                 if grid[i][j] == "1":
-                    dfs(i,j)
+                    dfs(i, j)
                     answer += 1
         return answer
