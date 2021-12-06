@@ -36,10 +36,11 @@
   * 비트 조작
   * 슬라이딩 윈도우
   * [그리디 알고리즘](./알고리즘/그리디/greedy.md)
-  * 다이나믹 프로그래밍
+  * [다이나믹 프로그래밍](./알고리즘/다이나믹%20프로그래밍/dinamic_programming.md)
 
 ---
 
 *Reference:*
 - 파이썬 알고리즘 인터뷰 (책)
+- 이것이 코딩 테스트다 (책)
 - [Github Repo : Interview Question for Beginner](https://github.com/JaeYeopHan/Interview_Question_for_Beginner)
