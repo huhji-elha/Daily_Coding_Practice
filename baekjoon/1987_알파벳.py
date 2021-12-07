@@ -1,22 +1,28 @@
 import sys
-R, C = list(map(int, sys.stdin.readline().split()))
-alpha_grid = []
-for _ in range(R):
-    alpha_grid.append(list(sys.stdin.readline())[:-1])
+sys.setrecursionlimit(10000)
 
-alpha_set = set()
-tmp = []
-
-
-def dfs(i, j):
-    if i < 0 or j < 0 or i >= R or j >= C or alpha_grid[i][j] in alpha_set:
-        return
-    alpha_set.add(alpha_grid[i][j])
-    dfs(i, j+1)
-    dfs(i, j-1)
-    dfs(i-1, j)
-    dfs(i+1, j)
+input = sys.stdin.readline
+R, C = map(int, input().split())
+alpha_grid = [list(map(lambda x: ord(x) - 65, input().rstrip()))
+              for _ in range(R)]
+dx = [0, 0, -1, 1]
+dy = [1, -1, 0, 0]
+alpha = [0]*26
 
 
-dfs(0, 0)
-print(alpha_set)
+def dfs(x, y, count):
+    global res_max
+    res_max = max(res_max, count)
+    for i in range(4):
+        nx = x + dx[i]
+        ny = y + dy[i]
+        if 0 <= nx < R and 0 <= ny < C and alpha[alpha_grid[nx][ny]] == 0:
+            alpha[alpha_grid[nx][ny]] = 1
+            dfs(nx, ny, count+1)
+            alpha[alpha_grid[nx][ny]] = 0
+
+
+res_max = 1
+alpha[alpha_grid[0][0]] = 1
+dfs(0, 0, 1)
+print(res_max)
